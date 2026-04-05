@@ -1,8 +1,7 @@
 import unittest
 
-from leafnode import LeafNode
-from htmlnode import HTMLNode
-from textnode import TextNode, TextType
+from textnode import TextNode
+from texttype import TextType
 
 from texttohtml import text_node_to_html_node
 
@@ -44,6 +43,11 @@ class TestTextToHTML(unittest.TestCase):
         self.assertEqual(html_node.tag, "img")
         self.assertEqual(html_node.value, "")
         self.assertEqual(html_node.props, {"src": "URL", "alt": "This is a text node"})
+
+    def test_error(self):
+        node = TextNode("This is an error", "ErrorType", "URL")
+        with self.assertRaises(TypeError):
+            output = text_node_to_html_node(node)
 
 if __name__ == "__main__":
     unittest.main()
