@@ -6,7 +6,7 @@ from texttype import TextType
 from splitnodesdelimiter import split_nodes_delimiter
 
 class TestSplitNodesDelimiter(unittest.TestCase):
-    def no_split(self):
+    def test_no_split(self):
         node = TextNode("This text is already split", TextType.CODE)
         new_nodes = split_nodes_delimiter([node], "`", TextType.CODE)
         expected_nodes = [

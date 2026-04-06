@@ -36,5 +36,4 @@ def split_nodes_delimiter(old_nodes, delimiter, text_type):
                         new_nodes.append(TextNode(partitions[index], text_type))
                     else:
                         raise ValueError("Error: Empty Inline Text")
-    print(new_nodes)
     return new_nodes
