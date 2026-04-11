@@ -44,8 +44,6 @@ def is_code(markdown_block):
 def is_quote(markdown_block):
     quote_check = markdown_block.split('\n')
     for quote in quote_check:
-        if quote == "" or len(quote) < 2:
-            return False
         if quote[0] != '>':
             return False
         if len(quote) > 2:

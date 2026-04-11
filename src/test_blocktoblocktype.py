@@ -60,11 +60,6 @@ class TestBlockToBlockType(unittest.TestCase):
         expected = BlockType.PARAGRAPH
         self.assertEqual(output, expected)
 
-    def test_not_quote_empty_quote(self):
-        output = block_to_block_type("> not quote\n>\n> testing")
-        expected = BlockType.PARAGRAPH
-        self.assertEqual(output, expected)
-
     def test_not_quote_wrong_delimiter(self):
         output = block_to_block_type("> not quote\n> testing\n# lines")
         expected = BlockType.PARAGRAPH
