@@ -12,7 +12,7 @@ def generate_page(from_path, template_path, dest_path, basepath):
     title = extract_title(markdown)
     template_with_title = template.replace("{{ Title }}", title)
     template_with_content = template_with_title.replace("{{ Content }}", html)
-    template_with_href = template_with_content.replace('href="/', f'href={basepath}')
+    template_with_href = template_with_content.replace('href="/', f'href="{basepath}')
     webpage = template_with_href.replace('src="/', f'src="{basepath}')
     destination_directory = os.path.dirname(dest_path)
     os.makedirs(destination_directory, 0o777, True)
